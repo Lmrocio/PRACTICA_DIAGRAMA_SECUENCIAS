@@ -9,7 +9,7 @@ La actividad consiste en:
 
 ## a) Crea de secuencias
 
-1) Obtener las clases estereotipadas a partir de los casos de uso. (Interfaces, Control y Entidad)
+### 1) Obtener las clases estereotipadas a partir de los casos de uso. (Interfaces, Control y Entidad)
 
 - Caso de uso: sacar dinero.
   - ``Interface``: Usuario, es decir, el actor que inicia la acción de sacar dinero como interacción externa.
@@ -20,10 +20,11 @@ La actividad consiste en:
   - ``Interface``: Usuario, es decir, el actor que ingresa sus datos como interacción externa.
   - ``Control``: Validador de usuarios como el controlador del flujo e interraciones entre los objetos.
   - ``Entidad``: Base de datos de los usuarios.
-    
-2) Diseñar el diagrama de secuencias básico en base a las clases estereotipadas.
+
+
+### 2) Diseñar el diagrama de secuencias básico en base a las clases estereotipadas.
 - Caso de uso: sacar dinero
-  ![CU: SACAR DINERO]()
+  ![CU: SACAR DINERO](https://github.com/Lmrocio/PRACTICA_DIAGRAMA_SECUENCIAS/blob/main/CU_sacar_dinero.png)
   
   <details><summary>Código empleado</summary>
     @startuml
@@ -50,7 +51,7 @@ La actividad consiste en:
   </details>
   
 - Caso de uso: validación usuario.
- ![CU: VALIDACIÓN USUARIO]()
+ ![CU: VALIDACIÓN USUARIO](https://github.com/Lmrocio/PRACTICA_DIAGRAMA_SECUENCIAS/blob/main/CU_validacion_usuario.png)
   
   <details> <summary>Código empleado</summary>
     @startuml
@@ -71,7 +72,67 @@ La actividad consiste en:
   
     @enduml
   </details>
-  
-3) Obtener las clases de diseño a partir de las clases de análisis estereotipadas.
 
-4) Diseñar el diagrama de secuencia final.
+
+
+### 3) Obtener las clases de diseño a partir de las clases de análisis estereotipadas.
+- Caso de uso: sacar dinero.
+  - ``Controlador de transacción``: se trataría de una Clase que contiene métodos como verificarSaldo(), ingresarCantidad(), consultarSaldo(), etc.
+  - ``Cuenta bancaria``: se trataría de una Clase con atributos como 'saldo', el cuál representa a la cantidad de dinero registrada en una cuenta de banco determinada, y métodos como aumentarSaldo().
+    
+- Caso de uso: validación de usuario.
+  - ``Controlador de validación``: se trataría de una Clase con métodos como validarCredenciales().
+  - ``Base de datos``: se trataría de una Clase con métodos como buscarUsuario().
+
+
+### 4) Diseñar el diagrama de secuencia final.
+- Caso de uso: sacar dinero.
+  ![CU SACAR DINERO FINAL]()
+  
+  <details><summay>Código empleado</summay>
+    @startuml
+    
+    actor Usuario
+  
+    participant "ControladorTransaccion" as Control
+  
+    participant "CuentaBancaria" as Cuenta
+    
+    Usuario -> Control: solicitarSacarDinero()
+  
+    Control -> Cuenta: verificarSaldo()
+  
+    Cuenta --> Control: saldoDisponible()
+  
+    Control -> Cuenta: descontarDinero()
+  
+    Cuenta --> Control: confirmacionDescuento()
+  
+    Control -> Usuario: entregarDinero()
+    
+    @enduml
+  </details>
+  
+- Caso de uso: validación usuario.
+  ![CU VALIDACION USUARIO FINAL]()
+
+  <details><summary>Código empleado</summary>
+    @startuml
+    
+    actor Usuario
+  
+    participant "ControladorAutenticacion" as Control
+  
+    participant "BaseDeDatos" as BaseDatos
+    
+    Usuario -> Control: ingresarCredenciales()
+  
+    Control -> BaseDatos: consultarUsuario()
+  
+    BaseDatos --> Control: respuestaValidacion()
+  
+    Control -> Usuario: resultadoAutenticacion()
+    
+    @enduml
+  </details>
+
