@@ -24,7 +24,8 @@ La actividad consiste en:
 
 ### 2) Diseñar el diagrama de secuencias básico en base a las clases estereotipadas.
 - Caso de uso: sacar dinero
-  ![CU: SACAR DINERO](https://github.com/Lmrocio/PRACTICA_DIAGRAMA_SECUENCIAS/blob/main/CU_sacar_dinero.png)
+
+![CU: SACAR DINERO](https://github.com/Lmrocio/PRACTICA_DIAGRAMA_SECUENCIAS/blob/main/CU_sacar_dinero.png)
   
   <details><summary>Código empleado</summary>
     @startuml
@@ -51,7 +52,8 @@ La actividad consiste en:
   </details>
   
 - Caso de uso: validación usuario.
- ![CU: VALIDACIÓN USUARIO](https://github.com/Lmrocio/PRACTICA_DIAGRAMA_SECUENCIAS/blob/main/CU_validacion_usuario.png)
+
+![CU: VALIDACIÓN USUARIO](https://github.com/Lmrocio/PRACTICA_DIAGRAMA_SECUENCIAS/blob/main/CU_validacion_usuario.png)
   
   <details> <summary>Código empleado</summary>
     @startuml
@@ -87,7 +89,8 @@ La actividad consiste en:
 
 ### 4) Diseñar el diagrama de secuencia final.
 - Caso de uso: sacar dinero.
-  ![CU SACAR DINERO FINAL](https://github.com/Lmrocio/PRACTICA_DIAGRAMA_SECUENCIAS/blob/main/CU_sacar_dinero_final.png)
+
+![CU SACAR DINERO FINAL](https://github.com/Lmrocio/PRACTICA_DIAGRAMA_SECUENCIAS/blob/main/CU_sacar_dinero_final.png)
   
   <details><summay>Código empleado</summay>
     @startuml
@@ -114,7 +117,7 @@ La actividad consiste en:
   </details>
   
 - Caso de uso: validación usuario.
-  ![CU VALIDACION USUARIO FINAL](https://github.com/Lmrocio/PRACTICA_DIAGRAMA_SECUENCIAS/blob/main/CU_validacion_usuario_final.png)
+![CU VALIDACION USUARIO FINAL](https://github.com/Lmrocio/PRACTICA_DIAGRAMA_SECUENCIAS/blob/main/CU_validacion_usuario_final.png)
 
   <details><summary>Código empleado</summary>
     @startuml
